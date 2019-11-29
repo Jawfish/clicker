@@ -8,6 +8,30 @@ X window system
 
 tkinter
 
+## Installation
+
+**1. Install tkinter:**
+
+Debian and Ubuntu-based distributions:
+
+`sudo apt-get install python3-tk python3-dev`
+
+Arch-based distributions:
+
+`sudo pacman -S community/python-pmw`
+
+Solus:
+
+`sudo eopkg install python3-devel python3-tkinter`
+
+**2. Clone the repository:**
+
+`git clone https://github.com/Jawfish/clicker.git && cd clicker`
+
+**3. Create a virtual environment in which to install clicker and install it:**
+
+`python -m venv clicker && pip install -r requirements.txt -e .`
+
 ## Usage
 
 Modify `config.ini` to specify the following values:
