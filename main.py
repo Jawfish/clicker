@@ -48,6 +48,6 @@ print(pixel_color)
 while True:
     if tuple(PixelAt(watch_offset_x, watch_offset_y)) == pixel_color:
         logging.info(f'Found pixel at {watch_offset_x} x {watch_offset_y}')
-        pyautogui.click_offset(click_offset_x, click_offset_y)
+        pyautogui.click(click_offset_x, click_offset_y)
         logging.info(f'click_offseted at {click_offset_x} x {click_offset_x}')
     time.sleep(sleep)
