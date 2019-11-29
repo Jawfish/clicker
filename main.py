@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-
+import gi
+gi.require_version('Gdk', '3.0')
+from gi.repository import Gdk
 import pyautogui
 import logging
 import sys
 import subprocess
-from gi.repository import Gdk
 import time
 from configparser import ConfigParser
 
@@ -14,6 +15,7 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(message)s',
                     datefmt='%m-%d %H:%M',
                     filename='log.log')
+
 
 def get_screen_resolution():
     output = subprocess.Popen('xrandr | grep "\*" | cut -d" " -f4',
@@ -27,8 +29,9 @@ def PixelAt(x, y):
     return pb.get_pixels()
 
 
-
 screen = get_screen_resolution()
+
+
 try:
     watch_offset_x = int(config['DEFAULT']['OffsetToCheck'].split('x')[0])
     watch_offset_y = int(config['DEFAULT']['OffsetToCheck'].split('x')[1])
@@ -38,16 +41,12 @@ try:
     pixel_color = tuple(
         config['DEFAULT']['ColorToCheck'].replace(' ', '').split(','))
 except:
-    logging.exception('Config error.')
+    logging.exception('Config error:')
 
-
-
-
-print(pixel_color)
 
 while True:
     if tuple(PixelAt(watch_offset_x, watch_offset_y)) == pixel_color:
         logging.info(f'Found pixel at {watch_offset_x} x {watch_offset_y}')
         pyautogui.click(click_offset_x, click_offset_y)
-        logging.info(f'click_offseted at {click_offset_x} x {click_offset_x}')
+        logging.info(f'Clicked at {click_offset_x} x {click_offset_x}')
     time.sleep(sleep)
