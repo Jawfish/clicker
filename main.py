@@ -40,6 +40,6 @@ while True:
         logging.info(f'Found pixel at {watch_x} x {watch_y}')
         pyautogui.click(click_x, click_y)
         logging.info(f'Clicked at {click_x} x {click_x}')
-        if one_shot == True:
-            exit()
+        if one_shot == 'True':
+            break;
     time.sleep(sleep)
