@@ -14,7 +14,7 @@ tkinter
 
 Debian and Ubuntu-based distributions:
 
-`sudo apt-get install python3-tk python3-dev`
+`sudo apt install python3-tk python3-dev`
 
 Arch-based distributions:
 
@@ -22,7 +22,7 @@ Arch-based distributions:
 
 Solus:
 
-`sudo eopkg install python3-devel python3-tkinter`
+`sudo eopkg it python3-devel python3-tkinter`
 
 **2. Clone the repository:**
 
