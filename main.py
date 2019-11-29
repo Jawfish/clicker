@@ -25,11 +25,11 @@ def PixelAt(x, y):
 try:
     watch_x = int(config['DEFAULT']['PixelToCheck'].split('x')[0])
     watch_y = int(config['DEFAULT']['PixelToCheck'].split('x')[1])
-    click_x = int(config['DEFAULT']['PixelToClick'].split('x')[0])
-    click_y = int(config['DEFAULT']['PixelToClick'].split('x')[1])
+    click_x = int(config['DEFAULT']['ClickLocation'].split('x')[0])
+    click_y = int(config['DEFAULT']['ClickLocation'].split('x')[1])
     sleep = int(config['DEFAULT']['TimeBetweenChecks'])
-    pixel_color = tuple(
-        config['DEFAULT']['ColorToCheck'].replace(' ', '').split(','))
+    pixel_color = tuple(map(int,
+        config['DEFAULT']['ColorToCheck'].replace(' ', '').split(',')))
 except:
     logging.exception('Config error:')
 
