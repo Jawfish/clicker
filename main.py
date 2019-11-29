@@ -23,10 +23,10 @@ def PixelAt(x, y):
 
 
 try:
-    watch_offset_x = int(config['DEFAULT']['OffsetToCheck'].split('x')[0])
-    watch_offset_y = int(config['DEFAULT']['OffsetToCheck'].split('x')[1])
-    click_offset_x = int(config['DEFAULT']['OffsetToClick'].split('x')[0])
-    click_offset_y = int(config['DEFAULT']['OffsetToClick'].split('x')[1])
+    watch_x = int(config['DEFAULT']['PixelToCheck'].split('x')[0])
+    watch_y = int(config['DEFAULT']['PixelToCheck'].split('x')[1])
+    click_x = int(config['DEFAULT']['PixelToClick'].split('x')[0])
+    click_y = int(config['DEFAULT']['PixelToClick'].split('x')[1])
     sleep = int(config['DEFAULT']['TimeBetweenChecks'])
     pixel_color = tuple(
         config['DEFAULT']['ColorToCheck'].replace(' ', '').split(','))
@@ -35,8 +35,8 @@ except:
 
 
 while True:
-    if tuple(PixelAt(watch_offset_x, watch_offset_y)) == pixel_color:
-        logging.info(f'Found pixel at {watch_offset_x} x {watch_offset_y}')
-        pyautogui.click(click_offset_x, click_offset_y)
-        logging.info(f'Clicked at {click_offset_x} x {click_offset_x}')
+    if tuple(PixelAt(watch_x, watch_y)) == pixel_color:
+        logging.info(f'Found pixel at {watch_x} x {watch_y}')
+        pyautogui.click(click_x, click_y)
+        logging.info(f'Clicked at {click_x} x {click_x}')
     time.sleep(sleep)
