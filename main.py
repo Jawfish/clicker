@@ -5,7 +5,6 @@ from gi.repository import Gdk
 import pyautogui
 import logging
 import sys
-import subprocess
 import time
 from configparser import ConfigParser
 
@@ -17,19 +16,10 @@ logging.basicConfig(level=logging.DEBUG,
                     filename='log.log')
 
 
-def get_screen_resolution():
-    output = subprocess.Popen('xrandr | grep "\*" | cut -d" " -f4',
-                              shell=True, stdout=subprocess.PIPE).communicate()[0]
-    return output.split()[0].split(b'x')
-
-
 def PixelAt(x, y):
     w = Gdk.get_default_root_window()
     pb = Gdk.pixbuf_get_from_window(w, x, y, 1, 1)
     return pb.get_pixels()
-
-
-screen = get_screen_resolution()
 
 
 try:
