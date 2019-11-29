@@ -1,2 +1,3 @@
 # clicker
-Simple GUI automation tool to send clicks if a specified pixel matches a specified color.
+
+clicker is a command line click automation tool built in Python.
