@@ -12,25 +12,15 @@ tkinter
 
 Modify `config.ini` to specify the following values:
 
-`PixelToCheck`
+`PixelToCheck`, The location of the pixel to watch in the format of X-axis by Y-axis, with the top left of the screen being 0x0.
 
-The location of the pixel to watch in the format of X-axis by Y-axis, with the top left of the screen being 0x0.
+`ClickLocation`, The location to click when the watched pixel matches the desired color in the format of X-axis by Y-axis, with the top left of the screen being 0x0.
 
-`ClickLocation`
+`ColorToCheck`, The color to check for on the watched pixel in R, G, B format.
 
-The location to click when the watched pixel matches the desired color in the format of X-axis by Y-axis, with the top left of the screen being 0x0.
+`TimeBetweenChecks`, The time between checks in seconds.
 
-`ColorToCheck`
-
-The color to check for on the watched pixel in R, G, B format.
-
-`TimeBetweenChecks`
-
-The time between checks in seconds.
-
-`OneShot`
-
-Stops the loop after clicking once if set to True, otherwise the program will continue to click at the rate set in TimeBetweenChecks while the watched pixel matches the desired color
+`OneShot`, Stops the loop after clicking once if set to True, otherwise the program will continue to click at the rate set in TimeBetweenChecks while the watched pixel matches the desired color
 
 ## Use Cases
 
