@@ -41,5 +41,5 @@ while True:
         pyautogui.click(click_x, click_y)
         logging.info(f'Clicked at {click_x} x {click_x}')
         if one_shot == 'True':
-            break;
+            exit()
     time.sleep(sleep)
