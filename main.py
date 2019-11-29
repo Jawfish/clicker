@@ -30,6 +30,7 @@ try:
     sleep = int(config['DEFAULT']['TimeBetweenChecks'])
     pixel_color = tuple(map(int,
         config['DEFAULT']['ColorToCheck'].replace(' ', '').split(',')))
+    one_shot = config['DEFAULT']['OneShot']
 except:
     logging.exception('Config error:')
 
@@ -39,4 +40,6 @@ while True:
         logging.info(f'Found pixel at {watch_x} x {watch_y}')
         pyautogui.click(click_x, click_y)
         logging.info(f'Clicked at {click_x} x {click_x}')
+        if one_shot == True:
+            exit()
     time.sleep(sleep)
