@@ -50,7 +50,7 @@ Modify `config.ini` to specify the following values:
 
 * Clicking a button when a progress bar reaches a certain point
 
-* Switching window focus when a notifiation appears
+* Switching window focus when a notification appears
 
 ## Limitations
 
