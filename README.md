@@ -38,7 +38,7 @@ Modify `config.ini` to specify the following values:
 
 `PixelToCheck`, the location of the pixel to watch in the format of X-axis by Y-axis, with the top left of the screen being 0x0.
 
-`ClickLocation`, the location to click when the watched pixel matches the desired color in the format of X-axis by Y-axis, with the bottom left of the screen being 0x0.
+`ClickLocation`, the location to click when the watched pixel matches the desired color in the format of X-axis by Y-axis.
 
 `ColorToCheck`, the color to check for on the watched pixel in R, G, B format.
 
